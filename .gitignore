@@ -9,7 +9,6 @@ lerna-debug.log*
 
 deploy
 node_modules
-dist
 dist-ssr
 *.local
 
