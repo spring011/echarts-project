@@ -35,7 +35,7 @@ const series: MapSeriesItem[] = [
     name: '正常',
     type: 'scatter',
     coordinateSystem: 'geo',
-    symbolSize: 4,
+    symbolSize: 8,
     itemStyle: {
       color: '#00FF6C',
     },
@@ -50,7 +50,7 @@ const series: MapSeriesItem[] = [
     name: '停运',
     type: 'scatter',
     coordinateSystem: 'geo',
-    symbolSize: 4,
+    symbolSize: 8,
     itemStyle: {
       color: '#FF3000',
     },
