@@ -39,7 +39,7 @@ body,
   line-height: 1;
 
   --the-header-height: 73px;
-  background: #fff;
+  background: #363c41;
 }
 
 @media (prefers-color-scheme: dark) {

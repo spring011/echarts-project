@@ -86,15 +86,18 @@ onBeforeUnmount(() => {
 </script>
 <style lang="scss" scoped>
 .item {
-  margin-top:30px;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin: 10px;
+  padding-top:10px;
+  box-shadow:  0px 0px 12px rgba(0, 0, 0, .12);
   .header {
     display: flex;
     justify-content: center;
-    height: 40px;
-    margin-bottom: 20px;
   }
   .content {
-    height: 800px;
+    height: 500px;
   }
 }
 </style>
