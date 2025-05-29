@@ -1,0 +1,78 @@
+{
+  "name": "shandianzhongxinzhan",
+  "private": true,
+  "version": "0.0.55",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "postbuild": "node ./write.mjs --mode=production",
+    "build:test": "vue-tsc && vite build --mode=test",
+    "tar:test": "node ./tar.mjs --mode=test --delete --zip",
+    "test": "npm run build:test && node ./write.mjs --mode=test && npm run tar:test",
+    "cz": "cz",
+    "release": "release-it patch",
+    "prepare": "husky install",
+    "lint": "",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.4.3",
+    "@mapbox/mapbox-gl-language": "^1.0.1",
+    "@mapbox/mapbox-gl-sync-move": "^0.3.1",
+    "@turf/turf": "^6.5.0",
+    "@vueuse/core": "^10.11.1",
+    "mapbox-gl": "^1.9.0",
+    "vue": "^3.4.37"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/file-saver": "^2.0.7",
+    "@types/lodash-es": "^4.17.12",
+    "@types/mapbox__mapbox-gl-draw": "^1.4.7",
+    "@types/mapbox-gl": "^2.7.21",
+    "@types/node": "^22.2.0",
+    "@types/qs": "^6.9.15",
+    "@vicons/antd": "^0.12.0",
+    "@vicons/carbon": "^0.12.0",
+    "@vicons/fa": "^0.12.0",
+    "@vicons/ionicons5": "^0.12.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "commitizen": "^4.3.0",
+    "cross-zip": "^4.0.1",
+    "cz-git": "^1.9.4",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "minimist": "^1.2.8",
+    "postcss-px-to-viewport-8-plugin": "^1.2.5",
+    "prettier": "^3.3.3",
+    "release-it": "^17.6.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.77.8",
+    "shelljs": "^0.8.5",
+    "typescript": "^5.5.4",
+    "unocss": "^0.61.9",
+    "unplugin-vue-components": "^0.27.3",
+    "vite": "^5.4.0",
+    "vite-plugin-vue-devtools": "^7.3.7",
+    "vue-tsc": "^2.0.29"
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,vue}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

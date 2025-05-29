@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "after:bump": "echo 版本号已更新 ${version}"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  },
+  "git": {
+    "commitMessage": "chore: :hammer: release ${version}"
+  },
+  "github": {
+    "release": false,
+    "draft": false
+  },
+  "npm": {
+    "publish": false
+  }
+}
