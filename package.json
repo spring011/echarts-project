@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "postbuild": "node ./write.mjs --mode=production",
+    "postbuild": "",
     "build:test": "vue-tsc && vite build --mode=test",
     "tar:test": "node ./tar.mjs --mode=test --delete --zip",
     "test": "npm run build:test && node ./write.mjs --mode=test && npm run tar:test",

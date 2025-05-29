@@ -34,18 +34,8 @@ export default ({ command, mode }) => {
           manualChunks: {
             core: [
               'vue',
-              'vue-router',
-              '@vueuse/core',
-              'pinia',
-              'pinia-plugin-persistedstate',
-              'axios',
-              'qs',
-              'mitt',
             ],
             mapboxgl: [
-              'mapbox-gl',
-              '@mapbox/mapbox-gl-language',
-              '@mapbox/mapbox-gl-sync-move',
               '@turf/turf',
             ],
             echarts: ['echarts'],
