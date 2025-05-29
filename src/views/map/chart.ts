@@ -35,6 +35,7 @@ export class InitChart {
   clock: any = null;
   init(chartDom: HTMLElement, option: any, isMap: boolean = false) {
     this.chart = echarts.init(chartDom);
+    localStorage.setItem('mapZoom','1.2')
 
     isMap && echarts.registerMap('china', chinaMap as any);
     this.setOption(option);
@@ -55,6 +56,7 @@ export class InitChart {
     let option = {
       geo: {zoom: 1.2,center:[103.823557, 36.058039]}
     }
+    localStorage.setItem('mapZoom','1.2');
     this.chart && this.chart.setOption(option);
   }
 

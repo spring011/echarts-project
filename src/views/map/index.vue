@@ -74,8 +74,12 @@ onMounted(() => {
   chart.bindClick((params: any) => {
      let center = chart.chart.convertFromPixel('geo', [params.event.offsetX, params.event.offsetY]);
      if (center) {
+      
+      let zoom = localStorage.getItem('mapZoom') || '1.2';
+      let zoomSize = Number(zoom) + 1;
+      localStorage.setItem('mapZoom',zoomSize+'')
       chart.setOption({
-        geo: { zoom: chart.option.geo.zoom+3, center: center},
+        geo: { zoom: zoomSize, center: center},
       });
      }
   });
