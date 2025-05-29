@@ -1,6 +1,7 @@
 import * as echarts from 'echarts';
 import { mapOption } from './option';
 import chinaMap from './china.json';
+import { center } from 'node_modules/@turf/turf';
 
 /**
  *判断对象是否是一个纯粹的对象
@@ -54,7 +55,11 @@ export class InitChart {
     this.option = option;
   }
   restore() {//重置原来的状态
-    this.chart && this.chart.setOption(mapOption,true);
+    console.log(mapOption)
+    let option = {
+      geo: {zoom: 1.2,center:[103.823557, 36.058039]}
+    }
+    this.chart && this.chart.setOption(option);
   }
 
   resize() {

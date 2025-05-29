@@ -30,6 +30,7 @@ export const mapOption = {
     roam: true,
     zoom: 1.2,
     silent: false,
+    center:[103.823557, 36.058039],
 
     scaleLimit: {
       min: 1,

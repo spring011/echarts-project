@@ -1,6 +1,11 @@
 <template>
-  <div>123</div>
-  <MapChart></MapChart>
+  <div class="wrapper">
+    <div class="item">
+      <MapChart></MapChart>
+    </div>
+  </div>
+ 
+  
 </template>
 
 <script setup lang="ts">
@@ -9,5 +14,10 @@ import MapChart from './map/index.vue';
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .wrapper {
+    height: 100%;
+    padding-top:30px;
+    overflow: auto;
+  }
 </style>

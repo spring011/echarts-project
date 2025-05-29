@@ -1,5 +1,12 @@
 <template>
-  <div id="mapChart" ref="mapChart" class="w-full h-full"></div>
+  <div class="item">
+    <div class="header">
+      <n-button strong secondary type="primary" size="small" @click="reset">重置</n-button>
+    </div>
+    <div class="content">
+      <div id="mapChart" ref="mapChart" class="w-full h-full"></div>
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import { Ref, onBeforeUnmount, onMounted, ref } from 'vue';
@@ -28,7 +35,7 @@ const series: MapSeriesItem[] = [
     name: '正常',
     type: 'scatter',
     coordinateSystem: 'geo',
-    symbolSize: 10,
+    symbolSize: 4,
     itemStyle: {
       color: '#00FF6C',
     },
@@ -43,7 +50,7 @@ const series: MapSeriesItem[] = [
     name: '停运',
     type: 'scatter',
     coordinateSystem: 'geo',
-    symbolSize: 10,
+    symbolSize: 4,
     itemStyle: {
       color: '#FF3000',
     },
@@ -55,6 +62,9 @@ const series: MapSeriesItem[] = [
   },
 ];
 option.series = series;
+function reset() {
+  chart.restore();
+}
 
 onMounted(() => {
   chart = new InitChart();
@@ -65,7 +75,7 @@ onMounted(() => {
      let center = chart.chart.convertFromPixel('geo', [params.event.offsetX, params.event.offsetY]);
      if (center) {
       chart.setOption({
-        geo: { zoom: chart.option.geo.zoom+0.5, center: center},
+        geo: { zoom: chart.option.geo.zoom+3, center: center},
       });
      }
   });
@@ -74,4 +84,17 @@ onBeforeUnmount(() => {
   chart.destoryChart();
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.item {
+  margin-top:30px;
+  .header {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  .content {
+    height: 800px;
+  }
+}
+</style>
