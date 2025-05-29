@@ -68,7 +68,6 @@ function reset() {
 
 onMounted(() => {
   chart = new InitChart();
-  console.log(option)
   chart.init(mapChart.value as HTMLElement, option, true);
   //点击
   chart.bindClick((params: any) => {
